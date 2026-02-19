@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURIX — упаковка бизнеса</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">AURIX</div>
+        <nav class="nav-menu">
+            <a href="../index.html">Главная</a>
+            <a href="services.html">Услуги и цены</a>
+            <a href="portfolio.html">Проекты</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+        <a class="telegram" href="https://t.me/@Ilnaz_manager" target="_blank">Связаться</a>
+    </header>
+
+    <section id="services" style="padding: 150px;">
+        <div class="container">
+            <h2><span class="glow">Услуги и цены</span></h2>
+
+            <div class="services-grid-row">
+                <div class="start-card card">
+                    <h3>Старт</h3>
+                    <div class="price">от 9 000 ₽</div>
+                    <p>Подойдёт, если нужно быстро и недорого запустить красивую страницу.</p>
+                    <ul>
+                        <li>Одностраничный сайт (Landing Page)</li>
+                        <li>Современный дизайн</li>
+                        <li>Адаптация под телефон</li>
+                        <li>Размещение на GitHub Pages</li>
+                        <li>Подключение формы связи</li>
+                    </ul>
+                    <p><strong>⚠️ Без полноценного хостинга и SEO-продвижения.</strong></p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>
+            <div class="services-grid-row">
+                <div class="service-card  card">
+                    <h3>Бизнес</h3>
+                    <div class="price">от 22 000 ₽</div>
+                    <p>Полноценный сайт с доменом и хостингом.</p>
+                    <ul>
+                        <li>Индивидуальный дизайн</li>
+                        <li>Домен + хостинг (помощь в подключении)</li>
+                        <li>Адаптация под все устройства</li>
+                        <li>Базовая SEO-настройка</li>
+                        <li>Подключение форм, мессенджеров</li>
+                        <li>Подключение аналитики</li>
+                    </ul>
+                    <p>Обслуживание* — 3.000 ₽ / мес.</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+
+                <div class="service-card card">
+                    <h3>Premium</h3>
+                    <div class="price">от 39 000 ₽</div>
+                    <p>Подойдёт, если нужны расширенные возможности и функционал:</p>
+                    <ul>
+                        <li>Оплата на сайте</li>
+                        <li>Регистрация пользователей</li>
+                        <li>Личный кабинет</li>
+                        <li>Повышенная безопасность</li>
+                        <li>Более сложная логика</li>
+                    </ul>
+                    <p>Обслуживание* — 4.000 ₽ / мес.</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+
+                <div class="service-card card">
+                    <h3>Pro</h3>
+                    <div class="price">от 55 000 ₽</div>
+                    <p>Всё из тарифа "Premium" + расширенный контроль и контент:</p>
+                    <ul>
+                        <li>Админ-панель</li>
+                        <li>Возможность самостоятельно добавлять видео, кейсы, отзывы, фото, статьи</li>
+                    </ul>
+                    <p>Обслуживание* — 4.000 ₽ / мес.</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>
+
+            <p>*Ежемесячное обслуживание включает: техническую поддержку сайта, исправление мелких багов, обновление контента (фото, текст), контроль работоспособности, продление домена/хостинга (если через нас делаем), резервные копии</p>
+
+            <div class="lux-card card">
+                <h3>Люкс</h3>
+                <div class="price">от 100 000 ₽</div>
+                <p>Ультра-премиальный сайт с уникальным дизайном и максимальным функционалом:</p>
+                <ul>
+                    <li>Полная интеграция с CRM и маркетинговыми инструментами</li>
+                    <li>Система оплаты, личный кабинет, расширенный функционал</li>
+                    <li>Сложные интерактивные элементы и анимации</li>
+                    <li>Поддержка, оптимизация и консультации 24/7</li>
+                </ul>
+                <p>Идеально для крупных проектов, брендов и экспертов.</p>
+                <button class="buy-btn">Купить</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <div class="lux-divider"></div>
+
+    <footer>
+        <p>© 2026 AURIX Studio. Все права защищены.</p>
+    </footer>
+
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Оплата услуги по тарифу</h3>
+            <p id="modal-service-name"></p>
+            <p class="modal-price"></p>
+            <form id="payment-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Email" required>
+                <button type="submit">Перейти к оплате</button>
+            </form>
+            <p class="modal-note">* Демо‑режим. Реальная оплата не производится.</p>
+            <p class="modal-note" style="margin-top: 0; color: rgb(255, 255, 255);">свяжитесь с нами через раздел "контакты"</p>
+        </div>
+    </div>
+
+    <script src="../scripts/script.js"></script>
+</body>
+
+</html>
