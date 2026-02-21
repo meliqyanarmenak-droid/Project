@@ -15,7 +15,7 @@ export async function handler(event) {
 
 
         const botToken = process.env.BOT_TOKEN;
-        const chatId = process.env.CHAT_ID;
+        const chatId = process.env.CHAT_IDS;
 
         const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
