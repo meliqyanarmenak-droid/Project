@@ -843,8 +843,7 @@ li {
     margin: 10px auto;
 }
 
-#services[style],
-#contact[style] {
+#services[style] {
     padding: 120px 20px !important;
 }
 
@@ -1153,7 +1152,20 @@ li {
     }
 }
 
+#contpadd {
+    padding: 70px;
+}
+
 @media (max-width: 480px) {
+
+    .contact-link {
+        font-size: 24px;
+    }
+
+    #contpadd {
+    padding: 20px;
+}
+
     header {
         flex-direction: row;
         flex-wrap: wrap;
