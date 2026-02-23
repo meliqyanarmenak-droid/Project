@@ -19,19 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('payment-modal');
     const modalServiceName = document.getElementById('modal-service-name');
     const modalPrice = document.querySelector('.modal-price');
+    const modalinfo = document.querySelector('.modal-info');
     const buyButtons = document.querySelectorAll('.buy-btn');
     const closeModal = document.querySelector('.close-modal');
     const paymentForm = document.getElementById('payment-form');
 
-    if (modal && modalServiceName && modalPrice && buyButtons.length > 0 && closeModal && paymentForm) {
+    if (modal && modalServiceName && modalPrice && modalinfo && buyButtons.length > 0 && closeModal && paymentForm) {
         buyButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const card = e.target.closest('.card, .service-card, .start-card, .lux-card');
                 if (card) {
                     const service = card.querySelector('h3')?.textContent || 'Услуга';
                     const price = card.querySelector('.price')?.textContent || 'Цена';
+                    const info = card.querySelector('p')?.textContent || 'Инфо';
                     modalServiceName.textContent = service;
                     modalPrice.textContent = price;
+                    modalinfo.textContent = info;
                     modal.style.display = 'flex';
                 }
             });
@@ -45,12 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.target === modal) {
                 modal.style.display = 'none';
             }
-        });
-
-        paymentForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Спасибо за интерес! В реальном проекте здесь будет интеграция с YooKassa / ЮMoney.');
-            modal.style.display = 'none';
         });
     }
 
