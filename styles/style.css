@@ -90,6 +90,10 @@ header:hover {
     width: 80%;
 }
 
+.logo img {
+
+}
+
 .telegram {
     color: var(--accent);
     text-decoration: none;
