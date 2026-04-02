@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+/* Google Fonts загружается через <link> в HTML для неблокирующего рендеринга */
 
 :root {
     --bg:          #050805;
@@ -58,7 +58,7 @@ body::after {
         radial-gradient(ellipse 50% 60% at 85% 80%, rgba(0,255,163,0.05) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
-    animation: bgPulse 8s ease-in-out infinite alternate;
+    /* bgPulse убран — вызывал постоянный repaint всего экрана */
 }
 
 @keyframes bgPulse {
@@ -247,6 +247,7 @@ header:hover {
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
     animation: gridDrift 20s linear infinite;
+    will-change: transform;
 }
 
 @keyframes gridDrift {
@@ -278,11 +279,13 @@ header:hover {
         0 0 60px rgba(57, 255, 110, 0.25),
         0 0 120px rgba(57, 255, 110, 0.1);
     animation: glowPulse 3s ease-in-out infinite alternate;
+    will-change: opacity;
 }
 
 @keyframes glowPulse {
-    0%   { text-shadow: 0 0 20px var(--accent-glow), 0 0 60px rgba(57,255,110,0.2); }
-    100% { text-shadow: 0 0 30px var(--accent-glow), 0 0 80px rgba(57,255,110,0.35), 0 0 140px rgba(57,255,110,0.12); }
+    0%   { opacity: 0.85; }
+    100% { opacity: 1; }
+    /* opacity анимация дешевле text-shadow изменений */
 }
 
 .hero-content p {
@@ -532,8 +535,8 @@ h2::after {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
+    background: rgba(8, 16, 10, 0.92);
+    /* backdrop-filter убран — 10+ карточек с blur создавали 10+ GPU-слоёв */
     border: 1px solid var(--border-soft);
     border-radius: 16px;
     padding: 36px 32px;
@@ -660,8 +663,8 @@ li::before {
 .start-card {
     display: flex;
     flex-direction: column;
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
+    background: rgba(8, 16, 10, 0.92);
+    /* backdrop-filter убран */
     border: 1px solid var(--border-soft);
     border-radius: 16px;
     padding: 36px 32px;
@@ -734,6 +737,7 @@ li::before {
     background: linear-gradient(90deg, transparent 10%, var(--accent) 50%, transparent 90%);
     box-shadow: 0 0 16px var(--accent-glow);
     animation: luxScan 3s ease-in-out infinite alternate;
+    will-change: opacity;
 }
 
 @keyframes luxScan {

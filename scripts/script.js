@@ -66,13 +66,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const header = document.querySelector('header');
     if (header) {
+        let scrollTicking = false;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(10,10,10,0.95)';
-            } else {
-                header.style.background = 'rgba(10,10,10,0.8)';
+            if (!scrollTicking) {
+                requestAnimationFrame(() => {
+                    header.style.background = window.scrollY > 50
+                        ? 'rgba(10,10,10,0.95)'
+                        : 'rgba(10,10,10,0.8)';
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
             }
-        });
+        }, { passive: true });
     }
 
     const form = document.getElementById("contactForm");
